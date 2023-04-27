@@ -29,7 +29,7 @@ public class Reminder {
     private LocalDateTime modified;
 
     @Column(name = "telegram_user")
-    private String telegramUserId;
+    private Long telegramUserId;
 
     public Long getId() {
         return id;
@@ -80,11 +80,11 @@ public class Reminder {
         this.modified = modified;
     }
 
-    public String getTelegramUserId() {
+    public Long getTelegramUserId() {
         return telegramUserId;
     }
 
-    public void setTelegramUserId(String telegramUserId) {
+    public void setTelegramUserId(Long telegramUserId) {
         this.telegramUserId = telegramUserId;
     }
 }

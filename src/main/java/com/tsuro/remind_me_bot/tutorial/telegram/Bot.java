@@ -135,7 +135,7 @@ public class Bot extends TelegramLongPollingBot {
         reminder.setCreated(LocalDateTime.now());
         reminder.setReminderTime(scheduleTime);
         reminder.setModified(LocalDateTime.now());
-        reminder.setTelegramUserId(String.valueOf(userId));
+        reminder.setTelegramUserId(userId);
         reminder.setReminderMessage(msg.getText());
 
         reminder = reminderService.createReminder(reminder);
