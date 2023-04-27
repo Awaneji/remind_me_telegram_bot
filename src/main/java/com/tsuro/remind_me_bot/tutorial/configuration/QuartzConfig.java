@@ -53,58 +53,6 @@ public class QuartzConfig {
         return schedulerFactory;
     }
 
-//    @Bean(name = "scheduler")
-//    public Scheduler scheduler() throws IOException {
-//        return schedulerFactoryBean().getScheduler();
-//    }
-
-//    public static SimpleTriggerFactoryBean createTrigger(JobDetail jobDetail, long pollFrequencyMs, String triggerName) {
-//        log.debug("createTrigger(jobDetail={}, pollFrequencyMs={}, triggerName={})", jobDetail.toString(), pollFrequencyMs, triggerName);
-//        JobDataMap dataMap = jobDetail.getJobDataMap();
-//
-//        Date startAt = (Date)dataMap.get("startAt");
-//        SimpleTriggerFactoryBean factoryBean = new SimpleTriggerFactoryBean();
-//        factoryBean.setJobDetail(jobDetail);
-//        factoryBean.setStartDelay(0L);
-//        factoryBean.setRepeatInterval(pollFrequencyMs);
-//        factoryBean.setName(triggerName);
-//        factoryBean.setRepeatCount(SimpleTrigger.REPEAT_INDEFINITELY);
-//        factoryBean.setMisfireInstruction(SimpleTrigger.MISFIRE_INSTRUCTION_RESCHEDULE_NEXT_WITH_REMAINING_COUNT);
-//        factoryBean.setStartTime(startAt);
-//
-//
-//        return factoryBean;
-//    }
-//
-//    @Bean
-//    public SchedulerFactoryBean scheduler(Trigger... triggers) throws IOException {
-//        SchedulerFactoryBean schedulerFactory = new SchedulerFactoryBean();
-//
-//        schedulerFactory.setQuartzProperties(quartzProperties());
-//        schedulerFactory.setWaitForJobsToCompleteOnShutdown(true);
-//        schedulerFactory.setAutoStartup(true);
-//        schedulerFactory.setJobFactory(jobFactory());
-//        schedulerFactory.setOverwriteExistingJobs(true);
-//        schedulerFactory.setDataSource(quartzDataSource());
-//
-//        if (ArrayUtils.isNotEmpty(triggers)) {
-//            schedulerFactory.setTriggers(triggers);
-//        }
-//
-//        return schedulerFactory;
-//    }
-//    public static JobDetailFactoryBean createJobDetail(Class jobClass, String jobName) {
-//        log.debug("createJobDetail(jobClass={}, jobName={})", jobClass.getName(), jobName);
-//
-//        JobDetailFactoryBean factoryBean = new JobDetailFactoryBean();
-//        factoryBean.setName(jobName);
-//        factoryBean.setJobClass(jobClass);
-//        factoryBean.setDurability(true);
-//
-//
-//        return factoryBean;
-//    }
-
     @Bean
     @QuartzDataSource
     public DataSource quartzDataSource() {
