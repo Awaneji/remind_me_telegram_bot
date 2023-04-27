@@ -1,4 +1,4 @@
-package com.tsuro.remind_me_bot.tutorial;
+package com.tsuro.remind_me_bot.tutorial.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
