@@ -40,7 +40,7 @@ public class RemindersJob implements Job {
         reminder.setActive(false);
         reminderService.updateReminder(id, reminder);
 
-        bot.sendText(Long.valueOf(reminder.getTelegramUserId()),reminder.getReminderMessage());
+        bot.sendText(reminder.getTelegramUserId(),"********* ALARM FOR ********* : "+reminder.getReminderMessage());
         System.out.println("Job trigger at " + LocalDateTime.now() + " and was scheduled to run at " + reminder.getReminderTime());
 
         /* unschedule or delete after job gets executed */
