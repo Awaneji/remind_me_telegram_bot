@@ -25,7 +25,7 @@ import static java.time.ZoneId.systemDefault;
 
 @Component
 @Slf4j
-public class AppStartupRunner { //implements CommandLineRunner {
+public class AppStartupRunner {// implements CommandLineRunner {
 
     @Autowired
     private BotInitializer botInitializer;
@@ -35,7 +35,7 @@ public class AppStartupRunner { //implements CommandLineRunner {
 
     @Autowired
     private SchedulerFactoryBean schedulerFactoryBean;
-    // @Override
+//     @Override
     public void run(String... args) throws Exception {
 //        botInitializer.init();
 
@@ -44,7 +44,7 @@ public class AppStartupRunner { //implements CommandLineRunner {
         reminder.setCreated(LocalDateTime.now());
         reminder.setReminderTime(LocalDateTime.now().plusMinutes(5));
         reminder.setModified(LocalDateTime.now());
-        reminder.setTelegramUserId(String.valueOf(85006L));
+        reminder.setTelegramUserId(4756L);
         reminder.setReminderMessage("Testing Quartz Scheduling");
 
         reminder = reminderService.createReminder(reminder);
@@ -58,7 +58,6 @@ public class AppStartupRunner { //implements CommandLineRunner {
 
         System.out.println("ZoneOffset = "+ZoneOffset.ofHours(2));
 //        System.out.println("ZoneOffset = "+ systemDefault());
-        ZoneId.getAvailableZoneIds().stream().forEach(System.out::println);
 
 
         // Scheduling time to run job
